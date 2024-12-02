@@ -1,4 +1,4 @@
-//package com.tsl.controller;
+
 package com.tsl.controller;
 
 import com.tsl.model.UploadedFile;
@@ -94,59 +94,3 @@ public class EmailVerificationController {
     }
 }
 
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.core.io.ByteArrayResource;
-//import org.springframework.http.HttpHeaders;
-//import org.springframework.http.MediaType;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.multipart.MultipartFile;
-//import com.tsl.service.EmailVerifierService;
-//
-//	@Controller
-//	@RequestMapping("/email-verification")
-//	public class EmailVerifierController {
-//
-//	    @Autowired
-//	    private EmailVerifierService emailVerifierService;
-//
-//	    private byte[] resultFile; 
-//	    private String resultFileName; 
-//
-//	   
-//	    @GetMapping
-//	    public String showUploadPage() {
-//	        return "upload-email-file";
-//	    }
-//
-//	    @PostMapping("/upload")
-//	    public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
-//	        try {
-//	          
-//	            resultFile = emailVerifierService.processAndVerifyEmails(file.getInputStream(), file.getOriginalFilename());
-//	            resultFileName = "verification_results.xlsx"; 
-//
-//	            model.addAttribute("success", "File processed successfully!");
-//	            return "download-email-results"; 
-//	        } catch (Exception e) {
-//	            model.addAttribute("error", "Error processing the file: " + e.getMessage());
-//	            return "upload-email-file";
-//	        }
-//	    }
-//	    @GetMapping("/download")
-//	    public ResponseEntity<ByteArrayResource> downloadResultFile() {
-//	        if (resultFile == null || resultFile.length == 0) {
-//	            throw new RuntimeException("No file available for download!");
-//	        }
-//
-//	        ByteArrayResource resource = new ByteArrayResource(resultFile);
-//
-//	        return ResponseEntity.ok()
-//	                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + resultFileName)
-//	                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-//	                .contentLength(resultFile.length)
-//	                .body(resource);
-//	    }
-//	}

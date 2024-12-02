@@ -1,12 +1,4 @@
-//package com.tsl.repository;
-//
-//import org.springframework.data.jpa.repository.JpaRepository;
-//
-//import com.tsl.model.UploadedFile;
-//
-//public interface UploadedFileRepository extends JpaRepository<UploadedFile, Long> {
-//
-//}
+
 package com.tsl.repository;
 
 import com.tsl.model.UploadedFile;

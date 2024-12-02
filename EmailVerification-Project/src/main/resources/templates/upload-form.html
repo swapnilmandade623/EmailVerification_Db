@@ -115,7 +115,7 @@
         <button type="submit">Upload</button>
     </form>
 
-    <!-- Search Bar -->
+    
     <div class="search-bar">
         <form method="get" th:action="@{/email-verification/search}">
             <label for="search">Search by File Name:</label>
@@ -124,7 +124,7 @@
         </form>
     </div>
 
-    <!-- Uploaded Files Section -->
+    
     <h2>Uploaded Files</h2>
     <table>
         <thead>
@@ -144,7 +144,7 @@
                 <td th:text="${file.verified ? 'Yes' : 'No'}"></td>
                 <td>
                     <a th:href="@{/email-verification/verify/{fileId}(fileId=${file.id})}">Verify</a> |
-                    <!-- Show download link only if file is verified -->
+                    
                     <span th:if="${file.verified}">
                         <a th:href="@{/email-verification/download/{fileId}(fileId=${file.id})}">Download Results</a>
                     </span>
